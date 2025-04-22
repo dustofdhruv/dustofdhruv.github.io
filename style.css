@@ -1,0 +1,99 @@
+:root {
+  --bg: #fff;
+  --fg: #000;
+  --link: #000;
+  --hover: #808080;
+  --grid: #eee;
+  --border: #ddd;
+  --filled: #000;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111;
+    --fg: #eee;
+    --link: #fff;
+    --hover: #ccc;
+    --grid: #333;
+    --border: #444;
+    --filled: #fff;
+  }
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+a {
+  color: var(--link);
+  margin: 0 0.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--hover);
+}
+
+h1, h2 { font-weight: 300; }
+h1 { font-size: 2rem; margin-top: 50px; }
+h2 { font-size: 1.5rem; }
+p, ul { font-size: 1.1rem; }
+ul { padding: 0; list-style: none; }
+.life-grid {
+  display: grid;
+  grid-template-columns: repeat(52, 1fr);
+  gap: 2px;
+  margin: 20px auto;
+  width: 80%;
+}
+.week-box {
+  width: 10px;
+  height: 10px;
+  background: var(--grid);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  transition: background 0.3s, border 0.3s;
+}
+.filled {
+  background: var(--filled);
+}
+input {
+  padding: 5px;
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+button {
+  padding: 10px 20px;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background: #333;
+}
+.registration-marks {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  height: 30px;
+  width: 100%;
+}
+.registration-mark {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+.registration-mark-1 { background: #F12222; }
+.registration-mark-2 { background: #006837; }
+.registration-mark-3 { background: #035F93; }
+.registration-mark-4 { background: #FAA401; }
+@media (max-width: 600px) {
+  .life-grid { gap: 1px; }
+  .week-box { width: 2px; height: 2px; }
+}
